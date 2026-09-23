@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.0
+
+
+- Zero-step install: a `SessionStart` hook configures the main status line, so `/progress-bar:install` is gone.
+- Status line follows plugin updates via a `~/.claude/progress-bar` symlink instead of a stale copied script.
+- Both bars render from one shared `bar.jq`; each script is a single `jq` call (no per-task subprocesses).
+- `PROGRESS_BAR_WIDTH` env var for bar width.
+- Spinner verbs removed (unrelated to progress bars).
+
 ## v0.1.2 - 2026-09-23
 
 - Fix `/progress-bar:install` writing `spinnerVerbs` as a plain array, which
