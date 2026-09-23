@@ -49,7 +49,9 @@ echo "$input" | jq -c '.tasks // []' | jq -c '.[]' | while IFS= read -r task; do
 
   token_count=$(echo "$task" | jq -r '.tokenCount // 0')
   ctx_size=$(echo "$task" | jq -r '.contextWindowSize')
-  content=$(echo "$task" | jq -r '.content // ""')
+  # Tasks carry name/label/description, not content; rebuild the default
+  # "name · description" text so the row keeps its identity.
+  content=$(echo "$task" | jq -r '[(.label // .name), .description] | map(select(. != null and . != "")) | join(" · ")')
 
   percent=$(( token_count * 100 / ctx_size ))
   if [ "$percent" -gt 100 ]; then percent=100; fi

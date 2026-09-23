@@ -1,14 +1,22 @@
 {
+  "columns": 80,
   "tasks": [
     {
       "id": "task-1",
-      "content": "Exploring the auth module",
+      "name": "Explore",
+      "type": "Explore",
+      "status": "running",
+      "description": "Exploring the auth module",
       "tokenCount": 42000,
       "contextWindowSize": 200000
     },
     {
       "id": "task-2",
-      "content": "Running the test suite"
+      "name": "general-purpose",
+      "type": "general-purpose",
+      "status": "running",
+      "description": "Running the test suite",
+      "tokenCount": 1200
     }
   ]
 }

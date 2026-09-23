@@ -1,6 +1,10 @@
 {
   "name": "roberto-tools",
-  "owner": { "name": "Roberto", "email": "robertodgb@gmail.com" },
+  "owner": {
+    "name": "Roberto",
+    "email": "robertodgb@gmail.com"
+  },
+  "description": "Roberto's Claude Code plugins: progress bars for the status line and subagents",
   "plugins": [
     {
       "name": "progress-bar",
