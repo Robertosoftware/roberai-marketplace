@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.1.2 - 2026-09-23
+
+- Fix `/progress-bar:install` writing `spinnerVerbs` as a plain array, which
+  Claude Code rejects ("Expected object"). It now writes
+  `{"mode": "replace", "verbs": [...]}`
+
 ## v0.1.1 - 2026-09-23
 
 - Fix subagent bars dropping the agent name and description: rows now show

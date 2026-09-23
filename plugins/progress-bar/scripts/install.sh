@@ -62,11 +62,11 @@ fi
 new_settings=$(echo "$current_settings" | jq \
   --arg cmd "$DEST_STATUSLINE" \
   '.statusLine = {"type": "command", "command": $cmd} |
-   .spinnerVerbs = ["Percolating", "Charting", "Tallying", "Gauging", "Rendering"]')
+   .spinnerVerbs = {"mode": "replace", "verbs": ["Percolating", "Charting", "Tallying", "Gauging", "Rendering"]}')
 
 echo "$new_settings" > "$SETTINGS_FILE"
 
 echo "Updated $SETTINGS_FILE:"
 echo "  statusLine   -> command: $DEST_STATUSLINE"
-echo "  spinnerVerbs -> [\"Percolating\", \"Charting\", \"Tallying\", \"Gauging\", \"Rendering\"]"
+echo "  spinnerVerbs -> replace with [\"Percolating\", \"Charting\", \"Tallying\", \"Gauging\", \"Rendering\"]"
 echo "Restart Claude Code (or open a new session) to see the change."
