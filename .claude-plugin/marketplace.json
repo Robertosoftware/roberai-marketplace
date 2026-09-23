@@ -1,0 +1,11 @@
+{
+  "name": "roberto-tools",
+  "owner": { "name": "Roberto", "email": "robertodgb@gmail.com" },
+  "plugins": [
+    {
+      "name": "progress-bar",
+      "source": "./plugins/progress-bar",
+      "description": "Custom progress bars for the status line and subagents"
+    }
+  ]
+}
